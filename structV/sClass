@@ -1,0 +1,43 @@
+C++ me `struct` aur `class` me kuch important differences hain, jo primarily inke access modifiers aur usage se jude hue hain. Dono mein objects aur data members define kiye ja sakte hain, par kuch specific differences hain:
+
+### 1. **Default Access Modifier**:
+   - **`struct`**: By default `public` hota hai, iska matlab hai ke agar aap kisi variable ya function ko struct me define karte hain to wo automatically public access modifier me aata hai.
+   - **`class`**: By default `private` hota hai, matlab koi bhi data member ya function private access me hota hai jab tak aap explicitly use public nahi kar dete.
+
+   ```cpp
+   struct ExampleStruct {
+       int x;  // Public by default
+   };
+
+   class ExampleClass {
+       int x;  // Private by default
+   };
+   ```
+
+### 2. **Use Cases**:
+   - **`struct`**: Generally, `struct` ka use data structures banane ke liye hota hai, jaise ke simple data containers, jahan complex functionality ki zaroorat nahi hoti. Matlab, jab aapko sirf data ko store karna ho bina kisi complex functionality ke, to `struct` prefer kar sakte hain.
+   - **`class`**: `class` ko jab zyada complex functionality aur encapsulation ke saath design kiya jata hai, to us case me `class` ka use prefer kiya jata hai. `class` me data members aur functions ka encapsulation aur inheritance jese features aur zyada utilize hote hain.
+
+### 3. **Inheritance**:
+   - **`struct`**: `struct` me jo bhi inheritance hoti hai wo by default `public` hoti hai.
+   - **`class`**: `class` me inheritance by default `private` hoti hai.
+
+   ```cpp
+   struct BaseStruct {};
+   struct DerivedStruct : BaseStruct {};  // Public inheritance by default
+
+   class BaseClass {};
+   class DerivedClass : BaseClass {};     // Private inheritance by default
+   ```
+
+### 4. **Memory Layout aur Performance**:
+   - Dono, `struct` aur `class`, memory layout aur performance ke maamle me lagbhag ek jaise hi hote hain. Jo cheezen `class` me implement ki jati hain unhe `struct` me bhi implement kiya ja sakta hai. Isliye, dono ke beech performance me koi khas antar nahi hota hai.  
+
+### Summary:
+| Feature                    | `struct` (Structure)   | `class` (Class)     |
+|----------------------------|------------------------|----------------------|
+| Default Access Modifier    | `public`              | `private`           |
+| Inheritance                | Public by default     | Private by default  |
+| Typical Use Cases          | Simple data containers| Encapsulation and complex behavior |
+
+In general, agar aapko sirf data ko hold karna hai bina kisi specific behavior ke, to `struct` ka use theek rahega. Agar aapko encapsulation, inheritance aur zyada complex features chahiye, to `class` ka use karna behtar rahega.
