@@ -1,4 +1,7 @@
-// 735. Asteroid Collision
+#include <iostream>
+#include <vector>
+
+using namespace std;
 
 class Solution {
 public:
@@ -13,7 +16,7 @@ public:
                     st.pop_back();
                 } else if (sum > 0) {
                     a = 0;
-                } else {  // sum ==0
+                } else {  // sum == 0
                     st.pop_back();
                     a = 0;
                 }
@@ -25,3 +28,17 @@ public:
         return st;
     }
 };
+
+int main() {
+    Solution solution;
+    vector<int> asteroids = {5, 10, -5};
+    vector<int> result = solution.asteroidCollision(asteroids);
+
+    cout << "Result: ";
+    for (int a : result) {
+        cout << a << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
