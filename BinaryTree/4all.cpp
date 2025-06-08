@@ -70,36 +70,11 @@ void inorder(node* root) {
     if(root == NULL) {
         return ;
     }
-
     inorder(root->left);
     cout << root-> data << " ";
     inorder(root->right);
-
 }
 
-void preorder(node* root) {
-    //base case
-    if(root == NULL) {
-        return ;
-    }
-
-    cout << root-> data << " ";
-    preorder(root->left);
-    preorder(root->right);
-
-}
-
-void postorder(node* root) {
-    //base case
-    if(root == NULL) {
-        return ;
-    }
-
-    postorder(root->left);
-    postorder(root->right);
-    cout << root-> data << " ";
-
-}
 
 void buildFromLevelOrder(node* &root) {
     queue<node*> q;
@@ -137,31 +112,22 @@ void buildFromLevelOrder(node* &root) {
 
 
 int main() {
-
     node* root = NULL;
 
     buildFromLevelOrder(root);
     levelOrderTraversal(root);
     // 1 3 5 7 11 17 -1 -1 -1 -1 -1 -1 -1
 
-    /*
     //creating a Tree
     root = buildTree(root);
     //1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1 
     //level order
+
     cout << "Printing the level order tracersal output " << endl;
     levelOrderTraversal(root);
 
     cout << "inorder traversal is:  ";
     inorder(root); 
-
-    cout << endl << "preorder traversal is:  ";
-    preorder(root); 
-
-    cout << endl << "postorder traversal is:  ";
-    postorder(root); 
-    */
-
 
     return 0;
 }
