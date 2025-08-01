@@ -1,7 +1,5 @@
 // `vector<vector<int>> adj(n);` C++ mein ek **2D vector** banata hai, jo commonly **adjacency list** ko represent karne ke liye use hota hai, especially **graphs** ke context mein.
 
-// ---
-// ### 🧠 Breakdown:
 
 // * `vector<vector<int>>` → ek vector hai, jismein har element bhi ek vector hai of type `int`.
 // * `adj(n)` → iska matlab hai ki outer vector ka size `n` hai. Yaani:
@@ -12,8 +10,6 @@
 // ### 🕸️ Use case: Graph Representation (Adjacency List)
 
 // Suppose tumhare paas `n` nodes ka graph hai. Har node `i` ke corresponding, `adj[i]` ek list store karta hai uske neighbors ki.
-
-// #### Example:
 
 // int n = 5;
 // vector<vector<int>> adj(n);
@@ -34,20 +30,26 @@
 // adj[3] = {}
 // adj[4] = {0}
 
-// ### ✅ Conclusion:
 
-// `vector<vector<int>> adj(n);` creates an adjacency list (or general 2D vector) with `n` rows, where each row can hold a list of integers. Useful for storing graphs, grids, or tables.
+// `vector<vector<int>> adj(n);` creates an adjacency list (or general 2D vector) with `n` rows,
+//  where each row can hold a list of integers. Useful for storing graphs, grids, or tables.
+
+#include <bits/stdc++.h>
+using namespace std;
 
 vector <vector<int>>printAdjacency(int n,int m,vector<vector<int>>&edges) {
+
     vector<vector<int>>adj(n);
    
-    for(int i=0;i<m;i++){
+    for(int i=0; i<m; i++) {
         int u=edges[i][0];
         int v=edges[i][1];
 
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
+
+    //return adj;
 
     vector<vector<int>>ans;
 

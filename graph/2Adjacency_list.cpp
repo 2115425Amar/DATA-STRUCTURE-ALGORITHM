@@ -35,7 +35,6 @@ int main() {
 
     cout << "Enter the number of nodes : ";
     cin >> n;
-
     cout << "Enter the number of edges : ";
     cin >> m;
 
@@ -46,7 +45,6 @@ int main() {
         cin >> u >> v;
         G.addEdge(u, v, 0);
     }
-
     // Printing graph
     G.printAdjList();
 
