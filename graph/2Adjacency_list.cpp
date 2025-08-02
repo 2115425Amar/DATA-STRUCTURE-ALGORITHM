@@ -5,13 +5,13 @@ class Graph {
     public:
         unordered_map<int, list<int> > adj;
 
+        // adjacency list representation of the graph
         void addEdge(int u, int v, bool direction) {
             // direction = false -> undirected graph
             // direction = true -> directed graph
 
             // create an edge from u to v
             adj[u].push_back(v);
-
             if(direction == false) {
                 adj[v].push_back(u);
             }
@@ -19,15 +19,16 @@ class Graph {
 
         void printAdjList(){
             for(auto i : adj) {
-                cout << i.first << " -> ";
+                cout << i.first << " -> "; 
 
-                for(auto j : i.second) {
+                for(auto j : i.second) {    
                     cout << j << " ";
                 }
                 cout << endl;
             }
         }
 };
+
 
 int main() {
 

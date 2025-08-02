@@ -40,7 +40,6 @@ vector<int> BFS(int vertex, vector< pair<int, int> > edges) {
             traversal(adjList, visited, answer, i);
         }
     }
-
     return answer;
 }
 

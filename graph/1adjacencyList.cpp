@@ -38,9 +38,12 @@
 using namespace std;
 
 vector <vector<int>>printAdjacency(int n,int m,vector<vector<int>>&edges) {
+    //n-> number of nodes
+    //m-> number of edges
 
     vector<vector<int>>adj(n);
-   
+    
+    //adapted from the given code snippet
     for(int i=0; i<m; i++) {
         int u=edges[i][0];
         int v=edges[i][1];
