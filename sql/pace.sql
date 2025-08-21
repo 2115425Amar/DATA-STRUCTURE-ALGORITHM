@@ -14,3 +14,13 @@ group by customer_id
 having count(distinct product_key) = (
     select count(*) from product
 )
+
+--  second max element fron table
+select max(amount) as second_max
+from sales  
+where amount < (select max(amount) from sales);
+
+-- SELECT salary
+-- FROM employees
+-- ORDER BY salary DESC
+-- LIMIT 1 OFFSET 1;
